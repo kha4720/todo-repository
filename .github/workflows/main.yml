@@ -1,4 +1,4 @@
-name: Deploy to EC2
+name: Deploy to EC2 server
 # main 브랜치가 push될때의 트리거 입력
 on:
   push:
