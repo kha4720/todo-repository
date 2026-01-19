@@ -1,8 +1,7 @@
-name: Deploy to EC2 server
-# main 브랜치가 push될때의 트리거 입력
+name: Deploy to EC2
 on:
   push:
-    branches: [ "main"]
+    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
@@ -25,7 +24,6 @@ jobs:
      - name: Run deploy script on EC2
        run: |
          ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
-           cd /home/hyeona/deploy/todo-repository
-           chmod +x deploy.sh
-           ./deploy.sh
-        EOF
+         cd /hyeona/deploy/todo-repository
+         sh ./deploy.sh
+         EOF
